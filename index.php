@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 <body>
 
-	<?php echo file_get_contents("header.html"); ?>
+	<?php echo file_get_contents("html/header.html"); ?>
 
 	<?php 
 
@@ -17,16 +17,16 @@
 	
 	switch(true){
 		case ($url == "/login"):
-			echo file_get_contents("login.html");
+			echo file_get_contents("html/login.html");
 		break;
 		case ($url == "/register"):
-			echo file_get_contents("register.html");
+			echo file_get_contents("html/register.html");
 		break;
 	}
 
 	?>
 
-	<?php echo file_get_contents("footer.html"); ?>
+	<?php echo file_get_contents("html/footer.html"); ?>
 
 </body>
 </html>
