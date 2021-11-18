@@ -17,10 +17,16 @@
 		
 	switch(true){
 		case ($url == "/test/login"):
-			echo file_get_contents("html/login.html");
+			include "views/login.php";
 		break;
 		case ($url == "/test/register"):
-			echo file_get_contents("html/register.html");
+			include 'views/register.php';
+		break;
+		case ($url == "/test/welcome"):
+			include 'views/welcome.php';
+		break;
+		case ($url == "/test/logout"):
+			include 'util/auth/logout.php';
 		break;
 	}
 

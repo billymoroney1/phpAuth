@@ -1,8 +1,8 @@
 <?php 
-    $path = $_SERVER['DOCUMENT_ROOT'];
+    $path = $_SERVER['DOCUMENT_ROOT']."/test";
     $path .= "/util/auth/register_script.php";
 
-    $conf = $_SERVER['DOCUMENT_ROOT'];
+    $conf = $_SERVER['DOCUMENT_ROOT']."/test";
     $conf .= "/config.php";
 
     include_once($path);
@@ -88,7 +88,7 @@
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Redirect to login page
-                    header("location: login.php");
+                    header("location: login");
                 } else{
                     echo "Oops! Something went wrong. Please try again later.";
                 }
@@ -104,9 +104,28 @@
 
 ?>
 
-<form>
-    <input id="username" type="text" placeholder="Username..."></input>
-    <input id="password" type="text" placeholder="Password..."></input>
-    <input id="re-password" type="text" placeholder="Re-Enter Password..."></input>
-    <input type="submit" value="Register">
-</form>
+<?php echo $_SERVER["PHP_SELF"];?>
+
+<div class="form-wrapper">
+    <form action="" method="post">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+            <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn" value="Submit">
+        </div>
+        <p>Already have an account? <a href="login">Login here</a>.</p>
+    </form>
+</div>
