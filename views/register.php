@@ -6,7 +6,7 @@
     $conf .= "/config.php";
 
     include_once($path);
-    include_once ($conf);
+    include_once($conf);
 
     //https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
 

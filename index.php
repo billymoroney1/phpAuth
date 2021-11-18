@@ -14,12 +14,12 @@
 	<?php 
 
 	$url = $_SERVER['REQUEST_URI'];
-	
+		
 	switch(true){
-		case ($url == "/login"):
+		case ($url == "/test/login"):
 			echo file_get_contents("html/login.html");
 		break;
-		case ($url == "/register"):
+		case ($url == "/test/register"):
 			echo file_get_contents("html/register.html");
 		break;
 	}
