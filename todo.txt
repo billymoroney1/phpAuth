@@ -1,0 +1,5 @@
+list all posts on welcome page
+add user id to content entries/table
+add ability to edit posts if it is the user in question' 
+ability to change password 
+error messages/styling if text is entered incorrectly 
