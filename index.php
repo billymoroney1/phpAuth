@@ -16,9 +16,6 @@
 	$url = $_SERVER['REQUEST_URI'];
 		
 	switch(true){
-		case ($url == "/test/"):
-			include "views/home.php";
-		break;
 		case ($url == "/test/login"):
 			include "views/login.php";
 		break;
@@ -30,6 +27,12 @@
 		break;
 		case ($url == "/test/logout"):
 			include 'util/auth/logout.php';
+		break;
+		case ($url == "/test/write"):
+			include 'views/write.php';
+		break;
+		case ($url == "/test/"):
+			include "views/home.php";
 		break;
 	}
 
