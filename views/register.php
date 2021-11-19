@@ -104,7 +104,6 @@
 
 ?>
 
-<?php echo $_SERVER["PHP_SELF"];?>
 
 <div class="form-wrapper">
     <form action="" method="post">
